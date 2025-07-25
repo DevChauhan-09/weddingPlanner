@@ -1,15 +1,29 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import venues from "../data/venues";
 
-function Venue() {
+function VenuesPage() {
+  const navigate = useNavigate();
+
   return (
-    // <div>
-    //     <Link to="/" style={{ color: "black", marginRight: "20px" }}>Locality</Link>
-    //     <Link to="/vendors" style={{ color: "black", marginRight: "20px" }}>No.of Guests</Link>
-    //     <Link to="/photo" style={{ color: "black", marginRight: "20px" }}>Room Count</Link>
-    //     <Link to="/realWedding" style={{ color: "black", marginRight: "20px" }}>Price per plate</Link>
-    //     <Link to="/e_invites" style={{ color: "black", marginRight: "20px" }}>Rating</Link>
-    //   </div>
-  )
+    <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {venues.map((venue) => (
+        <div
+          key={venue.id}
+          className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition cursor-pointer"
+          onClick={() => navigate(`/venue/${venue.id}`)}
+        >
+          <img
+            src={venue.image}
+            alt={venue.name}
+            className="w-full h-52 object-cover rounded-md"
+          />
+          <h2 className="text-lg font-semibold mt-2">{venue.name}</h2>
+          <p className="text-sm text-gray-600">{venue.location}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-export default Venue
+export default VenuesPage;
