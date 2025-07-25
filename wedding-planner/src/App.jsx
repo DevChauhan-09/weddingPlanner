@@ -1,29 +1,32 @@
-import { Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
+// File: src/App.jsx
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./Navbar";
 import Home from "./pages/Home";
-import Vendors from "./pages/Vendors";
-import Photo from './pages/Photo';
-import Venue from "./pages/Venue";
-import Real_Wedding from "./pages/Real_Wedding";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import E_Invites from "./pages/E_Invites";
-import Login from "./auth/Login";
-import Register from "./auth/Register";
+import Photo from "./pages/Photo";
+import Real_Wedding from "./pages/Real_Wedding";
+import Vendors from "./pages/Vendors";
+import Venue from "./pages/Venue";
 
-function App() {
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/about", element: <About /> },
+  { path: "/contact", element: <Contact /> },
+  { path: "/e-invites", element: <E_Invites /> },
+  { path: "/photo", element: <Photo /> },
+  { path: "/real-wedding", element: <Real_Wedding /> },
+  { path: "/vendors", element: <Vendors /> },
+  { path: "/venue", element: <Venue /> },
+]);
+
+export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-         <Route path="/venue" element={<Venue/>} />
-        <Route path="/vendors" element={<Vendors />} />
-        <Route path="/photo" element={<Photo />} />
-         <Route path="/realWedding" element={<Real_Wedding />} />
-          <Route path="/e_invites" element={<E_Invites/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-      </Route>
-    </Routes>
+    <>
+      <Navbar />
+      <RouterProvider router={router} />
+    </>
   );
 }
-
-export default App;

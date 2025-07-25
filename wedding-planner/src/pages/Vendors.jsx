@@ -1,11 +1,6 @@
-import React from 'react'
+// src/pages/Vendors.jsx
+import React from "react";
 
-function Vendors() {
-  return (
-    <div>
-      <h1>vendors</h1>
-    </div>
-  )
+export default function Vendors() {
+  return <h1>Vendors Page</h1>;
 }
-
-export default Vendors

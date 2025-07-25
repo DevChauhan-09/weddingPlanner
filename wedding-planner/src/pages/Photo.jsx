@@ -1,13 +1,6 @@
-import React from 'react'
+// src/pages/Photo.jsx
+import React from "react";
 
-function Photo() {
-  return (
-    <div>
-      <h1>photos
-        
-      </h1>
-    </div>
-  )
+export default function Photo() {
+  return <h1>Photo Gallery Page</h1>;
 }
-
-export default Photo
