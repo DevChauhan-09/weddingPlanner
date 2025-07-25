@@ -1,34 +1,40 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
+import { GiButterfly } from "react-icons/gi";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav
-      style={{
-        background: "#f8f8f8",
-        color: "black",
-        padding: "10px 20px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        borderBottom: "1px solid #ccc",
-      }}
-    >
-      
-      <div>
-        <Link to="/venue" style={{ color: "black", marginRight: "20px" }}>Venue</Link>
-        <Link to="/vendors" style={{ color: "black", marginRight: "20px" }}>Vendors</Link>
-        <Link to="/photo" style={{ color: "black", marginRight: "20px" }}>Photo</Link>
-        <Link to="/realWedding" style={{ color: "black", marginRight: "20px" }}>Real Wedding</Link>
-        <Link to="/e_invites" style={{ color: "black", marginRight: "20px" }}>E-Invites</Link>
+    <header>
+      {/* Top Mini Navbar */}
+      <div className="top-bar">
+        <div className="top-left">
+          <input type="text" placeholder="Search City..." />
+        </div>
+        <div className="top-right">
+          <nav className="nav-links">
+         <NavLink to="/login">Login</NavLink>
+          <NavLink to="/signUp">SignUp</NavLink>
+        </nav>
+        </div>
       </div>
 
-     
-      <div>
-        <Link to="/register" style={{ color: "black", marginRight: "20px" }}>Register</Link>
-        <Link to="/login" style={{ color: "black" }}>Login</Link>
+      {/* Main Navbar */}
+      <div className="main-navbar">
+        <div className="logo" >
+          <GiButterfly />
+          <span>WeddingBliss</span>
+        </div>
+
+        <nav className="nav-links">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/e-invites">E-Invites</NavLink>
+          <NavLink to="/vendors">Vendors</NavLink>
+          <NavLink to="/venue">Venue</NavLink>
+          <NavLink to="/real-wedding">Real Weddings</NavLink>
+          <NavLink to="/photo">Photo Gallery</NavLink>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}
