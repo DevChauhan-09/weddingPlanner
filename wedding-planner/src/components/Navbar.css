@@ -1,0 +1,104 @@
+/* Global Navbar Theme */
+header {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Top Mini Navbar */
+.top-bar {
+  background-color: #6c3483; /* Dark Purple */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 30px;
+}
+
+.top-left input {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.95rem;
+  width: 250px;
+}
+
+.top-right button {
+  background-color: white;
+  color: #6c3483;
+  margin-left: 10px;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.top-right button:hover {
+  background-color: #e4d3f3;
+}
+
+/* Main Navbar */
+.main-navbar {
+  background-color: #a569bd; /* Lighter Purple */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: purple;
+  padding: 10px;
+}
+
+.logo svg {
+  height: 40px;      /* adjust height */
+  width: 40px;       /* adjust width */
+  color: purple;     /* icon color */
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 5px;
+}
+
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  font-weight: bold;
+}

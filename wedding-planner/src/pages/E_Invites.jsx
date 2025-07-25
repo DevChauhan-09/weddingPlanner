@@ -1,11 +1,6 @@
-import React from 'react'
+// src/pages/E_Invites.jsx
+import React from "react";
 
-function E_Invites() {
-  return (
-    <div>
-      <h1>invites</h1>
-    </div>
-  )
+export default function E_Invites() {
+  return <h1>E-Invites Page</h1>;
 }
-
-export default E_Invites
